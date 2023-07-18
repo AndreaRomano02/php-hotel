@@ -37,6 +37,8 @@ $hotels = [
   ],
 
 ];
+
+$park = $_GET['park'] ?? false;
 ?>
 
 <!DOCTYPE html>
@@ -54,6 +56,12 @@ $hotels = [
 <body>
   <header>
     <h1>HOTELS</h1>
+    <form action="index.php" class="text-start mt-4 ms-5">
+      <label for="park">Parcheggio</label>
+      <input type="checkbox" name="park" id="park" class="form-check-input mt-2">
+      <button class="btn btn-light ms-3">Filtra</button>
+      <a class="btn btn-danger " href="index.php">Rimuovi Filtri</a>
+    </form>
   </header>
   <main>
     <table class="table table-dark table-striped-columns">
@@ -69,6 +77,9 @@ $hotels = [
       <tbody>
 
         <?php foreach ($hotels as $hotel) : ?>
+          <?php if ($park == 'on' && !$hotel['parking']) : ?>
+            <?php continue; ?>
+          <?php endif ?>
           <tr>
             <td><?= $hotel['name'] ?></td>
             <td><?= $hotel['description'] ?></td>
