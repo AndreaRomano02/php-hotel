@@ -46,6 +46,7 @@ $hotels = [
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css' integrity='sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg==' crossorigin='anonymous' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' integrity='sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==' crossorigin='anonymous' />
   <link rel="stylesheet" href="style.css">
   <title>Hotels</title>
 </head>
@@ -73,14 +74,14 @@ $hotels = [
             <td><?= $hotel['description'] ?></td>
             <td>
               <?php if ($hotel['parking']) : ?>
-                <span>Disponibile</span>
+                <span><i class="text-success fa-solid fa-check-to-slot"></i></span>
               <?php else : ?>
-                <span>Non Disponibile</span>
+                <span><i class="text-danger fa-solid fa-square-xmark"></i></span>
               <?php endif ?>
             </td>
-            <td>Vote: <?= $hotel['vote'] ?></td>
+            <td>Vote: <?= $hotel['vote'] ?><i class="ms-3 fa-solid fa-star"></i></td>
             <td>
-              <span><?= $hotel['distance_to_center'] ?></span>
+              <span><?= $hotel['distance_to_center'] ?>Km</span>
             </td>
           </tr>
         <?php endforeach ?>
