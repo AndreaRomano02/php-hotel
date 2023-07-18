@@ -1,6 +1,8 @@
 <form action="index.php" class="text-start mt-4 ms-5">
-  <label for="park">Parcheggio</label>
-  <input type="checkbox" name="park" id="park" class="form-check-input mt-2">
+  <div class="form-check form-switch form-check-reverse d-inline-block ">
+    <label class="form-check-label" for="park">Parcheggio</label>
+    <input class="form-check-input mt-2" name="park" type="checkbox" id="park">
+  </div>
   <label class="ms-3" for="vote">Filtra per voto</label>
   <select name="vote" id="vote">
     <option value="">--</option>
